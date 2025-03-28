@@ -9,4 +9,5 @@ public interface IUserDao
     Task<User?> GetByUsernameAsync(string userName);
 
     public Task<IEnumerable<User>> GetAsync(SearchUserParametersDto searchParameters);
+    Task<User?> GetByIdAsync(int Id);
 }

@@ -9,5 +9,24 @@
       "UserName": "Troles"
     }
   ],
-  "Todos": []
+  "Todos": [
+    {
+      "Id": 1,
+      "Owner": {
+        "Id": 1,
+        "UserName": "Nuran"
+      },
+      "Title": "Test todo",
+      "IsCompleted": false
+    },
+    {
+      "Id": 2,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Troles"
+      },
+      "Title": "Test",
+      "IsCompleted": false
+    }
+  ]
 }
