@@ -27,6 +27,15 @@
       },
       "Title": "Test",
       "IsCompleted": false
+    },
+    {
+      "Id": 3,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Troles"
+      },
+      "Title": "Todo Test",
+      "IsCompleted": false
     }
   ]
 }
