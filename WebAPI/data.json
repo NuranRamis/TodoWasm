@@ -11,15 +11,6 @@
   ],
   "Todos": [
     {
-      "Id": 1,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Nuran"
-      },
-      "Title": "Test todo",
-      "IsCompleted": false
-    },
-    {
       "Id": 2,
       "Owner": {
         "Id": 2,
@@ -36,6 +27,15 @@
       },
       "Title": "Todo Test",
       "IsCompleted": false
+    },
+    {
+      "Id": 1,
+      "Owner": {
+        "Id": 1,
+        "UserName": "Nuran"
+      },
+      "Title": "Test todo",
+      "IsCompleted": true
     }
   ]
 }
