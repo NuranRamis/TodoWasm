@@ -27,15 +27,6 @@
       },
       "Title": "Todo Test",
       "IsCompleted": false
-    },
-    {
-      "Id": 1,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Nuran"
-      },
-      "Title": "Test todo",
-      "IsCompleted": true
     }
   ]
 }

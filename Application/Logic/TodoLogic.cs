@@ -78,6 +78,23 @@ public class TodoLogic : ITodoLogic
         }
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        Todo? todo = await todoDao.GetByIdAsync(id);
+
+        if (todo == null)
+        {
+            throw new Exception($"Todo with ID {id} not found!");
+        }
+
+        if (!todo.IsCompleted)
+        {
+            throw new Exception("Cannot delete un-completed Todo!");
+            
+        }
+        await todoDao.DeleteAsync(id);
+    }
+
     private void ValidateTodo(Todo dto)
     {
         if (string.IsNullOrEmpty(dto.Title)) throw new Exception("Title cannot be empty");
