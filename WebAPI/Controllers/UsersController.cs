@@ -7,11 +7,11 @@ namespace WebAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
     private readonly IUserLogic userLogic;
 
-    public UserController(IUserLogic userLogic)
+    public UsersController(IUserLogic userLogic)
     {
         this.userLogic = userLogic;
     }
@@ -23,7 +23,6 @@ public class UserController : ControllerBase
         {
             User user = await userLogic.CreateAsync(dto);
             return Created($"/users/{user.Id}", user);
-
         }
         catch (Exception e)
         {

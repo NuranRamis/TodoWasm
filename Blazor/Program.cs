@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using BlazorWASM;
+using Blazor;
 using HttpClients.ClientInterfaces;
 using HttpClients.Implementations;
 
@@ -10,6 +10,5 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5277") });
 builder.Services.AddScoped<IUserService, UserHttpClient>();
-
 
 await builder.Build().RunAsync();
