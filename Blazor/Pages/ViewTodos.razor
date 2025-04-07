@@ -69,6 +69,9 @@ else
                 <td>
                     <FancyCheckBox IsCompleted="@item.IsCompleted" OnChange="@((status) => CompleteTodo(item, status))"/>
                 </td>
+                <td>
+                    <img src="icons/edit.gif" class="funnel" @onclick="@(() => navMgr.NavigateTo($"/EditTodo/{item.Id}"))"/>
+                </td>
             </tr>
         }
         </tbody>
