@@ -1,4 +1,4 @@
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using Domain.DTOs;
@@ -18,13 +18,11 @@ public class TodoHttpClient : ITodoService
 
     public async Task CreateAsync(TodoCreationDto dto)
     {
-
         HttpResponseMessage response = await client.PostAsJsonAsync("/todos", dto);
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
-
         }
     }
 
@@ -32,7 +30,7 @@ public class TodoHttpClient : ITodoService
     {
         string query = ConstructQuery(userName, userId, completedStatus, titleContains);
 
-        HttpResponseMessage response = await client.GetAsync("/todos"+query);
+        HttpResponseMessage response = await client.GetAsync("/todos" + query);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -57,7 +55,6 @@ public class TodoHttpClient : ITodoService
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
-
     }
 
     public async Task<TodoBasicDto> GetByIdAsync(int id)
@@ -69,12 +66,10 @@ public class TodoHttpClient : ITodoService
             throw new Exception(content);
         }
 
-        TodoBasicDto todo = JsonSerializer.Deserialize<TodoBasicDto>(content, 
-            new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            }
-        )!;
+        TodoBasicDto todo = JsonSerializer.Deserialize<TodoBasicDto>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        })!;
         return todo;
     }
 
@@ -86,7 +81,6 @@ public class TodoHttpClient : ITodoService
             string content = await response.Content.ReadAsStringAsync();
             throw new Exception(content);
         }
-
     }
 
     private static string ConstructQuery(string? userName, int? userId, bool? completedStatus, string? titleContains)

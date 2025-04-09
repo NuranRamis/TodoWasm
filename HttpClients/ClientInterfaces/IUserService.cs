@@ -7,5 +7,5 @@ public interface IUserService
 {
     Task<User> Create(UserCreationDto dto);
     
-    Task<IEnumerable<User>> GetAsync(string? usernameContains = null);
+    Task<IEnumerable<User>> GetUsers(string? usernameContains = null);
 }

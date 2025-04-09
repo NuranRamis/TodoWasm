@@ -61,17 +61,17 @@ public class TodoFileDao : ITodoDao
     public Task UpdateAsync(Todo toUpdate)
     {
         Todo? existing = context.Todos.FirstOrDefault(todo => todo.Id == toUpdate.Id);
-            if (existing == null)
-            {
-                throw new Exception($"Todo with id {toUpdate.Id} does not exist!");
-            }
+        if (existing == null)
+        {
+            throw new Exception($"Todo with id {toUpdate.Id} does not exist!");
+        }
+
+        context.Todos.Remove(existing);
+        context.Todos.Add(toUpdate);
         
-            context.Todos.Remove(existing);
-            context.Todos.Add(toUpdate);
-            
-            context.SaveChanges();
-            
-            return Task.CompletedTask;
+        context.SaveChanges();
+        
+        return Task.CompletedTask;
     }
 
     public Task<Todo> GetByIdAsync(int todoId)

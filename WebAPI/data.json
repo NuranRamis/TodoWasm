@@ -23,33 +23,6 @@
   ],
   "Todos": [
     {
-      "Id": 2,
-      "Owner": {
-        "Id": 2,
-        "UserName": "Troles"
-      },
-      "Title": "Test",
-      "IsCompleted": false
-    },
-    {
-      "Id": 3,
-      "Owner": {
-        "Id": 2,
-        "UserName": "Troles"
-      },
-      "Title": "Todo Test",
-      "IsCompleted": false
-    },
-    {
-      "Id": 4,
-      "Owner": {
-        "Id": 1,
-        "UserName": "Nuran"
-      },
-      "Title": "Buy milk",
-      "IsCompleted": false
-    },
-    {
       "Id": 5,
       "Owner": {
         "Id": 2,
@@ -93,6 +66,24 @@
       },
       "Title": "Study",
       "IsCompleted": false
+    },
+    {
+      "Id": 2,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Troles"
+      },
+      "Title": "TestUpdated",
+      "IsCompleted": false
+    },
+    {
+      "Id": 4,
+      "Owner": {
+        "Id": 1,
+        "UserName": "Nuran"
+      },
+      "Title": "Buy milk",
+      "IsCompleted": true
     }
   ]
 }

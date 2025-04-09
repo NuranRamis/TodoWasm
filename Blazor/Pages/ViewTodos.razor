@@ -78,7 +78,6 @@ else
                         &#x2717;
                     </label>
                 </td>
-                
             </tr>
         }
         </tbody>
@@ -98,7 +97,7 @@ else
     private int? userIdFilter;
     private string? completedStatusFilter;
     private string? titleContainsFilter;
-    
+
     private async Task LoadTodos()
     {
         try
@@ -116,14 +115,13 @@ else
             msg = e.Message;
         }
     }
-    
+
     private async Task CompleteTodo(Todo item, bool status)
     {
         TodoUpdateDto dto = new(item.Id)
         {
             IsCompleted = status
         };
-    
         try
         {
             await todoService.UpdateAsync(dto);
@@ -134,14 +132,14 @@ else
             msg = e.Message;
         }
     }
-    
+
     private async Task RemoveTodo(int todoId)
     {
         msg = "";
         try
         {
             await todoService.DeleteAsync(todoId);
-        
+            
             var list = new List<Todo>(todos!);
             list.RemoveAll(todo => todo.Id == todoId);
             todos = list.AsEnumerable();
@@ -152,5 +150,4 @@ else
             msg = e.Message;
         }
     }
-
 }

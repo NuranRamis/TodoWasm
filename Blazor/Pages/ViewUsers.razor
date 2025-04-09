@@ -42,7 +42,7 @@ else
         msg = "";
         try
         {
-            users = await userService.GetAsync();
+            users = await userService.GetUsers();
         }
         catch (Exception e)
         {
